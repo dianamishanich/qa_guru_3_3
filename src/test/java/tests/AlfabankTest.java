@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class AlfabankTest {
 
     @Test
-    void DepositsTest() {
+    void ElementsCollectionTest() {
         open("http://alfabank.ru");
         $(byText("Вклады")).click();
         $$(byText("Депозиты")).find(visible).parent().click();
@@ -20,7 +20,7 @@ public class AlfabankTest {
     }
 
     @Test
-    void InsuranceTest1() {
+    void SiblingTest() {
         open("http://alfabank.ru");
         $(byText("Вклады")).click();
         $$(byText("Описание")).find(visible).parent().sibling(0).click();
@@ -29,7 +29,7 @@ public class AlfabankTest {
     }
 
     @Test
-    void InsuranceTest2() {
+    void PrecedingTest() {
         open("http://alfabank.ru");
         $(byText("Вклады")).click();
         $$(byText("Что такое вклад?")).find(visible).parent().preceding(1).sibling(0).click();
@@ -38,7 +38,7 @@ public class AlfabankTest {
     }
 
     @Test
-    void InsuranceTest3() {
+    void ClosestTest() {
         open("http://alfabank.ru");
         $(byText("Вклады")).click();
         $$(byText("Страхование вкладов")).find(visible).closest("button").click();
